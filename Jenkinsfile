@@ -40,7 +40,7 @@ cp nodejs-demoapp.zip playbooks/files/nodejs-demoapp.zip
 ansible-playbook playbooks/deploy_dev.yml'''
       }
     }
-  }
+  
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
     Stage
