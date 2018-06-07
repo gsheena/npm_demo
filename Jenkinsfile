@@ -9,7 +9,20 @@ pipeline {
 
       }
       steps {
-        sh ''''''
+        sh '''npm install
+npm run build'''
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm run test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh '''mkdir files
+cp nodejs-demoapp.zip playbook/files/nodejs-demoapp.zip
+ansible-playbook deploy_dev.yml'''
       }
     }
   }
