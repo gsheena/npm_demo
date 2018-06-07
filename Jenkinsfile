@@ -30,7 +30,6 @@ ansible-playbook playbooks/deploy_dev.yml'''
         expression {
           params.REQUESTED_ACTION == 'Stage'
         }
-
       } 
     
   parameters {
