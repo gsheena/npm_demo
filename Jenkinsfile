@@ -26,8 +26,24 @@ ansible-playbook playbooks/deploy_dev.yml'''
       }
     }
   }
+  when {
+        expression {
+          params.REQUESTED_ACTION == 'Stage'
+        }
+
+      }
+      
+    stage('Deploy-stage') {
+      steps {
+        sh '''mkdir playbooks/files
+cp nodejs-demoapp.zip playbooks/files/nodejs-demoapp.zip
+ansible-playbook playbooks/deploy_dev.yml'''
+      }
+    }
+  }
   parameters {
-    choice(name: 'REQUESTED_ACTION', choices: '''Build Go
+    choice(name: 'REQUESTED_ACTION', choices: '''Build
+    Stage
 ''', description: 'Type of action to perform')
   }
 }
