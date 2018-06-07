@@ -27,7 +27,7 @@ ansible-playbook playbooks/deploy_dev.yml'''
     }
   }
   parameters {
-    choice(name: 'REQUESTED_ACTION', choices: '''Build
+    choice(name: 'REQUESTED_ACTION', choices: '''Build Go
 ''', description: 'Type of action to perform')
   }
 }
