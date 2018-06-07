@@ -26,15 +26,8 @@ ansible-playbook playbooks/deploy_dev.yml'''
       }
     }
   }
-  when {
-        expression {
-          params.REQUESTED_ACTION == 'Stage'
-        }
-      } 
-    
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
-    Stage
 ''', description: 'Type of action to perform')
   }
 }
