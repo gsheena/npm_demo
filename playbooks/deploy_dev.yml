@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: 1.0.253.11
   become: yes
   tasks:
     - name: Install NPM Package
